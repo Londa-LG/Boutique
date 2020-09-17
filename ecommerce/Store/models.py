@@ -3,7 +3,7 @@ from django.db import models
 
 class Categories(models.Model):
     title = models.CharField(max_length=50)
-    thumbnail = models.ImageField()
+    thumbnail = models.ImageField(upload_to='Categories')
     center = models.BooleanField(default=False)
 
     def __str__(self):
@@ -14,7 +14,7 @@ class Categories(models.Model):
 
 
 class Product(models.Model):
-    thumbnail = models.ImageField()
+    thumbnail = models.ImageField(upload_to='Product_thumbnail')
     name = models.CharField(max_length=60)
     description = models.TextField()
     price = models.IntegerField()
