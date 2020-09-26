@@ -48,6 +48,11 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('Store:details', kwargs={'id': self.id})
 
+    def add_to_cart(self):
+        return reverse('Cart:add', kwargs={'id': self.id})
+
+    def add_to_cart_detail(self):
+        return reverse('Store:add', kwargs={'id': self.id})
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product,on_delete=models.CASCADE)

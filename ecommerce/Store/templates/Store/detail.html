@@ -58,16 +58,11 @@
               <p class="text-muted lead">${{ prod.price }}</p>
               <p class="text-small mb-4">{{ prod.description }}</p>
               <div class="row align-items-stretch mb-4">
-                <div class="col-sm-5 pr-sm-0">
-                  <div class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white"><span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
-                    <div class="quantity">
-                      <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
-                      <input class="form-control border-0 shadow-0 p-0" type="text" value="1">
-                      <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
-                    </div>
-                  </div>
+                <div class="col-sm-3 pl-sm-0">
+                  <a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="{{ prod.add_to_cart_detail }}">
+                    Add to cart
+                  </a>
                 </div>
-                <div class="col-sm-3 pl-sm-0"><a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="cart.html">Add to cart</a></div>
               </div><a class="btn btn-link text-dark p-0 mb-4" href="#"><i class="far fa-heart mr-2"></i>Add to wish list</a><br>
               <ul class="list-unstyled small d-inline-block">
                 <li class="px-3 py-2 mb-1 bg-white"><strong class="text-uppercase">SKU:</strong><span class="ml-2 text-muted">{{ prod.SKU }}</span></li>
@@ -137,12 +132,11 @@
                 <div class="d-block mb-3 position-relative"><a class="d-block" href="{{ prods.get_absolute_url }}"><img class="img-fluid w-100" src="{{ prods.thumbnail.url }}" alt="..."></a>
                   <div class="product-overlay">
                     <ul class="mb-0 list-inline">
-                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="far fa-heart"></i></a></li>
                       <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="#">Add to cart</a></li>
                     </ul>
                   </div>
                 </div>
-                <h6> <a class="reset-anchor" href="detail.html">{{ pods.name }}</a></h6>
+                <h6> <a class="reset-anchor" href="{{ prods.get_absolute_url }}">{{ prods.name }}</a></h6>
                 <p class="small text-muted">${{ prods.price }}</p>
               </div>
             </div>

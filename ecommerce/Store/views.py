@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Categories, Product, Subcategories, ProductImage
 from Marketing.models import Emails
-
+from Cart.models import Order
 
 def Home(request):
 
@@ -59,6 +59,20 @@ def ProductsView(request):
         'fashion': fashion_sub
     }
     return render(request, 'Store/shop.html', context)
+
+def AddtoCartDetail(request,id):
+    # Gathering all the order object elements
+    product = Product.objects.get(id=id)
+    price = product.price
+
+    if request.method == "POST":
+        # Create order object
+        quantity = request.POST['quantity']
+        print(quantity)
+    else:
+        # Creating order object
+        Order.objects.create(product=product, quantity=1, total_price=price, complete=False)
+    return redirect('Cart:cart')
 
 
 def ProductDetail(request,id):

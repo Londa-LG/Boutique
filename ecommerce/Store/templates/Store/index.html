@@ -89,11 +89,11 @@
                   <a class="d-block" href="{{ product.get_absolute_url }}"><img class="img-fluid w-100" src="{{ product.thumbnail.url }}" alt="..."></a>
                   <div class="product-overlay">
                     <ul class="mb-0 list-inline">
-                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="{{ product.add_to_cart }}">Add to cart</a></li>
                     </ul>
                   </div>
                 </div>
-                <h6> <a class="reset-anchor" href="detail.html">{{ product.name }}</a></h6>
+                <h6> <a class="reset-anchor" href="{{ product.get_absolute_url }}">{{ product.name }}</a></h6>
                 <p class="small text-muted">${{ product.price }}</p>
               </div>
             </div>
@@ -152,7 +152,7 @@
             <div class="row">
               <div class="col-lg-6 mb-3 mb-lg-0">
                 <h5 class="text-uppercase">Let's be friends!</h5>
-                <p class="text-small text-muted mb-0">Nisi nisi tempor consequat laboris nisi.</p>
+                <p class="text-small text-muted mb-0">Subscribe to our newsletter</p>
               </div>
               <div class="col-lg-6">
                 <form action="." method="POST">

@@ -111,11 +111,11 @@
                         <div class="badge text-white badge-"></div><a class="d-block" href="{{ items.get_absolute_url }}"><img class="img-fluid w-100" src="{{ items.thumbnail.url }}" alt="..."></a>
                         <div class="product-overlay">
                           <ul class="mb-0 list-inline">
-                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
+                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="{{ items.add_to_cart }}">Add to cart</a></li>
                           </ul>
                         </div>
                       </div>
-                      <h6> <a class="reset-anchor" href="detail.html">{{ items.name }}</a></h6>
+                      <h6> <a class="reset-anchor" href="{{ items.get_absolute_url }}">{{ items.name }}</a></h6>
                       <p class="small text-muted">${{ items.price }}</p>
                     </div>
                   </div>
