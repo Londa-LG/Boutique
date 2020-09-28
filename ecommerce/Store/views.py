@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Categories, Product, Subcategories, ProductImage
 from Marketing.models import Emails
-from Cart.models import Order
+from Cart.models import Order, Cart
 
 def Home(request):
 
@@ -65,13 +65,12 @@ def AddtoCartDetail(request,id):
     product = Product.objects.get(id=id)
     price = product.price
 
-    if request.method == "POST":
-        # Create order object
-        quantity = request.POST['quantity']
-        print(quantity)
-    else:
-        # Creating order object
-        Order.objects.create(product=product, quantity=1, total_price=price, complete=False)
+    # Creating order object
+    order = Order.objects.create(user=request.user, product=product, quantity=1, total_price=price, complete=False)
+
+    # Assign order object to user Cart
+    cart = Cart.objects.get(user=request.user)
+    cart.orders.add(order)
     return redirect('Cart:cart')
 
 

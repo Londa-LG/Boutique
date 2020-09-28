@@ -1,10 +1,12 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 from Store.models import Product
 
 
 class Order(models.Model):
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     total_price = models.FloatField()
@@ -13,8 +15,11 @@ class Order(models.Model):
     def __str__(self):
         return self.product.name
 
+    def get_absolute_url(self):
+        return reverse('Cart:delete', kwargs={'id': self.id})
+
 class BillingDetails(models.Model):
-    order = models.OneToOneField(Order, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, null=True,  on_delete=models.CASCADE)
     first_name = models.CharField(null=True, max_length=100)
     last_name = models.CharField(null=True, max_length=100)
     email = models.EmailField(null=True, max_length=100)
@@ -30,8 +35,7 @@ class BillingDetails(models.Model):
         verbose_name_plural = 'Billing Details'
 
 class Cart(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    orders = models.ManyToManyField(Order)
-    address = models.ForeignKey(BillingDetails, on_delete=models.CASCADE)
-    coupon = models.CharField(max_length=40)
-    order_total = models.FloatField()
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+    orders = models.ManyToManyField(Order, null=True)
+    address = models.ForeignKey(BillingDetails, null=True, on_delete=models.CASCADE)
+    cart_total = models.FloatField(null=True)

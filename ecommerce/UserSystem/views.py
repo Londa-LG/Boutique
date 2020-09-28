@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
 
 from .forms import User_Registrations
+from Cart.models import Cart
 
 
 def Register_View(request):
@@ -14,6 +15,7 @@ def Register_View(request):
         if form.is_valid():
             user = form.save()
             username = form.cleaned_data.get('username')
+            Cart.objects.create(user=user)
             login(request, user)
             messages.success(request, f'{username} account created')
             return redirect('Store:home')

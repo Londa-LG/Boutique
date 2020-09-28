@@ -9,3 +9,8 @@ class Emails(models.Model):
 
     class Meta:
         verbose_name_plural = 'Emails'
+
+class CouponCode(models.Model):
+    coupon_code = models.CharField(max_length=100)
+    timestamp = models.DateField(auto_now_add=True)
+    discount_percentage = models.IntegerField(default=0)

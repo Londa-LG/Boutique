@@ -57,7 +57,7 @@
                       <td class="align-middle border-0">
                         <p class="mb-0 small">${{ order.total_price }}</p>
                       </td>
-                      <td class="align-middle border-0"><a class="reset-anchor" href="#"><i class="fas fa-trash-alt small text-muted"></i></a></td>
+                      <td class="align-middle border-0"><a class="reset-anchor" href="{{ order.get_absolute_url }}"><i class="fas fa-trash-alt small text-muted"></i></a></td>
                     </tr>
                   {% endfor %}
                   </tbody>
@@ -79,15 +79,7 @@
                   <ul class="list-unstyled mb-0">
                     <li class="d-flex align-items-center justify-content-between"><strong class="text-uppercase small font-weight-bold">Subtotal</strong><span class="text-muted small">${{ Total }}</span></li>
                     <li class="border-bottom my-2"></li>
-                    <li class="d-flex align-items-center justify-content-between mb-4"><strong class="text-uppercase small font-weight-bold">Total</strong><span>$250</span></li>
-                    <li>
-                      <form action="#">
-                        <div class="form-group mb-0">
-                          <input class="form-control" type="text" placeholder="Enter your coupon">
-                          <button class="btn btn-dark btn-sm btn-block" type="submit"> <i class="fas fa-gift mr-2"></i>Apply coupon</button>
-                        </div>
-                      </form>
-                    </li>
+                    <li class="d-flex align-items-center justify-content-between mb-4"><strong class="text-uppercase small font-weight-bold">Total</strong><span>${{ Total }}</span></li>
                   </ul>
                 </div>
               </div>
