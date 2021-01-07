@@ -19,10 +19,10 @@ Boutique is a registered users online store.
   5. View orders and find the email address of customers.
 
 * As a User
-  1. Visit [Boutique](https://boutique-store-1.herokuapp.com/).
-  2. Register as a user via the "Register" option on the Login page
-  3. Click on a product's picture or title to view more detail or simply add it to your cart
-  4. Place an order by filling in the checkout form
+  1. Visit Boutique.
+  2. Register as a user via the "Register" option on the Login page.
+  3. Click on a product's picture or title to view more detail or simply add it to your cart.
+  4. Place an order by filling in the checkout form.
 
 ### Dependencies
 * Python
@@ -45,3 +45,5 @@ Boutique is a registered users online store.
 ![](Screenshot_(6).png)
 ![](Screenshot_(7).png)
 ![](Screenshot_(9).png)
+![](Screenshot_(28).png)
+![](Screenshot_(29).png)
