@@ -2,10 +2,10 @@
 
 # Description
 Boutique is a registered users online store.
- 
+
 ## How to run the website
 1. Download all the master repository files.
-2. Activate the virtual environment ( run: botenv\Scripts\activate in command prompt) 
+2. Activate the virtual environment ( run: botenv\Scripts\activate in command prompt)
 3. cd to the ecommerce folder.
 4. Run a "python manage.py runserver" command.
 5. View website on your web browser of choice at http://127.0.0.1:8000/
@@ -21,11 +21,11 @@ Boutique is a registered users online store.
 * As a User
   1. Visit [Boutique](https://boutique-store-1.herokuapp.com/).
   2. Register as a user via the "Register" option on the Login page
-  3. Click on a product's picture or title to view more detail or simply add it to your cart 
+  3. Click on a product's picture or title to view more detail or simply add it to your cart
   4. Place an order by filling in the checkout form
 
 ### Dependencies
-* Python 
+* Python
 
 ### Features
 * Products
@@ -40,3 +40,8 @@ Boutique is a registered users online store.
 * A review products section.
 * Direct on website payments.
 
+### Screenshots
+
+![](Screenshot_(6).png)
+![](Screenshot_(7).png)
+![](Screenshot_(9).png)
