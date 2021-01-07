@@ -1,4 +1,4 @@
-# [Boutique](https://boutique-store-1.herokuapp.com/)
+# Boutique
 
 # Description
 Boutique is a registered users online store.
